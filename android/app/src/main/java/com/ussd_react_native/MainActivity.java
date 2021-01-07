@@ -11,7 +11,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    Hover.initialize(this);
     return "ussd_react_native";
   }
 }
