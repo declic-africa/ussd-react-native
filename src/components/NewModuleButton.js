@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button} from 'react-native';
 import CalendarModule from '../../modules/CalendarModule';
+import {NativeModules} from 'react-native';
+const {HoverModule} = NativeModules;
 
 const NewModuleButton = () => {
   const onPress = () => {
@@ -11,7 +13,7 @@ const NewModuleButton = () => {
         console.log(`Created a new event with id ${eventId}`);
       },
     );*/
-    CalendarModule.Hello();
+    HoverModule.CheckMoney();
   };
 
   return <Button title="Click" color="#841584" onPress={onPress} />;

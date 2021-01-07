@@ -16,7 +16,7 @@ import {
   StatusBar,
 } from 'react-native';
 import NewModuleButton from './src/components/NewModuleButton';
-import SendMoney from './src/components/SendMoney';
+import SendMoney from "./src/components/SendMoney";
 
 const App: () => React$Node = () => {
   return (
@@ -26,7 +26,7 @@ const App: () => React$Node = () => {
           flex: 1,
           justifyContent: 'center',
         }}>
-        <SendMoney />
+        <SendMoney/>
       </View>
     </>
   );

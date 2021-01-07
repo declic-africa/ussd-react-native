@@ -28,11 +28,11 @@ public class CalendarModule extends ReactContextBaseJavaModule{
     @NonNull
     @Override
     public String getName() {
-        return "CalendarModule";
+        return "NativeModule";
     }
 
     public void createCalendarEvent(String name, String location, Promise promise){
-        Log.d("CalendarModule", "Create event called with name: "+ name +" and location: "+location);
+        Log.d("NativeModule", "Create event called with name: "+ name +" and location: "+location);
         try{
             Integer eventID=10;
             promise.resolve(eventID);

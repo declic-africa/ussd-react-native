@@ -49,7 +49,7 @@ public class HoverModule extends ReactContextBaseJavaModule {
                                 activityPromise.resolve(message);
                             }
                         } else if (resultCode == Activity.RESULT_CANCELED) {
-                            activityPromise.resolve("Canceled");
+                            activityPromise.reject("Canceled");
                             if (data != null) {
                                 Log.d("MainActivity", "Error: " + data.getStringExtra("error"));
                             }

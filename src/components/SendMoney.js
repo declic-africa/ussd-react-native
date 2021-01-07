@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import CalendarModule from '../../modules/CalendarModule';
+
 import {
   Text,
   TouchableHighlight,
@@ -8,15 +10,29 @@ import {
   Button,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import NewModuleButton from './NewModuleButton';
+import HoverModule from '../../modules/HoverModule';
 class SendMoney extends Component {
   state = {name: 'Adama', balance: '0 FCFA'};
+
+  checkMoney = async () => {
+    try {
+      const balance = await HoverModule.CheckMoney();
+      this.setState({balance: balance});
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   render() {
     return (
       <View>
         <View style={styles.balanceView}>
           <Text>Votre balance est: {this.state.balance}</Text>
-          <TouchableHighlight activeOpacity={0.2} underlayColor="#dddd">
+          <TouchableHighlight
+            activeOpacity={0.2}
+            underlayColor="#dddd"
+            onPress={this.checkMoney}>
             <Icon
               name="sync-outline"
               style={{marginTop: 20}}
